@@ -36,4 +36,28 @@ class SolutionTest {
             Assertions.assertEquals(first[i], second[i], "Not equals");
         }
     }
+
+    @Test
+    void isPalindrome_1() {
+        int x = 121;
+        Assertions.assertTrue(Solution.isPalindrome(x));
+    }
+
+    @Test
+    void isPalindrome_2() {
+        int x = -121;
+        Assertions.assertFalse(Solution.isPalindrome(x));
+    }
+
+    @Test
+    void isPalindrome_3() {
+        int x = 10;
+        Assertions.assertFalse(Solution.isPalindrome(x));
+    }
+
+    @Test
+    void isPalindrome_4() {
+        int x = 1221;
+        Assertions.assertTrue(Solution.isPalindrome(x));
+    }
 }
