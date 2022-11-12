@@ -7,27 +7,11 @@ import org.junit.jupiter.api.Test;
 class SolutionTest {
 
     @Test
-    void twoSumTest_1() {
+    void twoSumTest() {
         compareTwoArray(new int[]{0, 1}, Solution.twoSum(new int[]{2,7,11,15}, 9));
-    }
-
-    @Test
-    void twoSumTest_2() {
         compareTwoArray(new int[]{0, 1}, Solution.twoSum(new int[]{3, 3}, 6));
-    }
-
-    @Test
-    void twoSumTest_3() {
         compareTwoArray(new int[]{1, 2}, Solution.twoSum(new int[]{3,2,4}, 6));
-    }
-
-    @Test
-    void twoSumTest_4() {
         compareTwoArray(new int[]{0, 2}, Solution.twoSum(new int[]{3,2,3}, 6));
-    }
-
-    @Test
-    void twoSumTest_5() {
         compareTwoArray(new int[]{1, 2}, Solution.twoSum(new int[]{2,5,5,11}, 10));
     }
 
@@ -38,26 +22,17 @@ class SolutionTest {
     }
 
     @Test
-    void isPalindrome_1() {
-        int x = 121;
-        Assertions.assertTrue(Solution.isPalindrome(x));
+    void isPalindrome() {
+        Assertions.assertTrue(Solution.isPalindrome(121));
+        Assertions.assertFalse(Solution.isPalindrome(-121));
+        Assertions.assertFalse(Solution.isPalindrome(10));
+        Assertions.assertTrue(Solution.isPalindrome(1221));
     }
 
     @Test
-    void isPalindrome_2() {
-        int x = -121;
-        Assertions.assertFalse(Solution.isPalindrome(x));
-    }
-
-    @Test
-    void isPalindrome_3() {
-        int x = 10;
-        Assertions.assertFalse(Solution.isPalindrome(x));
-    }
-
-    @Test
-    void isPalindrome_4() {
-        int x = 1221;
-        Assertions.assertTrue(Solution.isPalindrome(x));
+    void longestCommonPrefix() {
+        Assertions.assertEquals("fl", Solution.longestCommonPrefix(new String[]{"flower","flow","flight"}));
+        Assertions.assertEquals("", Solution.longestCommonPrefix(new String[]{"dog","racecar","car"}));
+        Assertions.assertEquals("c", Solution.longestCommonPrefix(new String[]{"cir","car"}));
     }
 }
