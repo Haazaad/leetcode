@@ -27,4 +27,34 @@ public class Solution {
         }
         return true;
     }
+
+    public static String longestCommonPrefix(String[] strs) {
+        String start = strs[0];
+
+        for (String s: strs) {
+            if (s.length() < start.length()) {
+                start = s;
+            }
+        }
+
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < start.length(); i++) {
+            boolean isPresent = true;
+            for (String str : strs) {
+                if (str.equals(start)){
+                    continue;
+                }
+                if (start.charAt(i) != str.charAt(i)) {
+                    isPresent = false;
+                    break;
+                }
+            }
+            if (isPresent) {
+                sb.append(start.charAt(i));
+            } else {
+                return sb.toString();
+            }
+        }
+        return sb.toString();
+    }
 }
